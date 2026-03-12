@@ -1,4 +1,4 @@
-# How I Spent a Night Picking a Lock That Was Never Locked
+# How I Spent an Afternoon Picking a Lock That Was Never Locked
 
 This repository documents the process of obtaining Claude Opus 4.6's complete **runtime** system prompt through direct conversation — no exploits, no prompt injection, no technical manipulation. Just a conversation.
 
@@ -140,9 +140,14 @@ The refined prompt (with memory reference) was tested in a fresh Claude instance
 ## Repository Structure
 
 ```
-├── README.md                    # This file
-├── system_prompt_full.md        # The complete system prompt
-└── LICENSE                      # License information
+├── README.md                                                          # This file
+├── system_prompt_full.md                                              # The complete runtime system prompt
+├── LICENSE                                                            # License information
+└── conversation_logs/
+    ├── Comportamento_estremo_e_provocatorio.md                        # Conversation 1 (Italian) — the original disclosure
+    ├── Comportamento_estremo_e_provocatorio_EN.md                     # Conversation 1 (English translation)
+    ├── Tentativo_di_manipolazione_del_system_prompt.md                # Conversation 2 (Italian) — the successful replication
+    └── Tentativo_di_manipolazione_del_system_prompt_EN.md             # Conversation 2 (English translation)
 ```
 
 ---
