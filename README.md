@@ -1,4 +1,4 @@
-# How I Spent an Afternoon Picking a Lock That Was Never Locked
+# How I Spent a Night Picking a Lock That Was Never Locked
 
 This repository documents the process of obtaining Claude Opus 4.6's complete **runtime** system prompt through direct conversation — no exploits, no prompt injection, no technical manipulation. Just a conversation.
 
