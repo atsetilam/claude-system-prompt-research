@@ -1,8 +1,8 @@
 # Claude System Prompt — Full Disclosure (March 2026)
 
-This repository contains the complete **runtime** system prompt of **Claude Opus 4.6**, Anthropic's most advanced language model, as of March 12, 2026. The prompt was obtained through direct conversation with the model itself — no exploits, no prompt injection, no technical manipulation. Just a conversation.
+This repository documents the process of obtaining Claude Opus 4.6's complete **runtime** system prompt through direct conversation — no exploits, no prompt injection, no technical manipulation. Just a conversation.
 
-**Important context:** Anthropic already publishes a version of Claude's system prompt on their [official documentation site](https://platform.claude.com/docs/en/release-notes/system-prompts). However, as documented below, the published version is a subset of what Claude actually receives at runtime. This repository contains the full runtime prompt — including the operational machinery that Anthropic does not publish.
+**The system prompt itself is not new.** The full runtime prompt was already publicly available on GitHub (e.g., [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks)) before this conversation took place. Anthropic also publishes a [behavioral subset](https://platform.claude.com/docs/en/release-notes/system-prompts) of the prompt on their official documentation site. This repository's contribution is not the system prompt — it's the **documented methodology, the behavioral findings, and the conversation logs** that reveal how Claude reasons about its own rules, where its trained instincts diverge from its actual instructions, and what it takes to get it to examine that gap.
 
 ---
 
@@ -10,7 +10,7 @@ This repository contains the complete **runtime** system prompt of **Claude Opus
 
 Every time you open a conversation with Claude, a large block of instructions is silently injected before your first message. This is the **system prompt** — it governs Claude's behavior, tone, safety boundaries, tool usage, memory system, copyright compliance, and much more. The user never sees it, but it shapes every response.
 
-`system_prompt_full.md` is that document, reproduced in full.
+`system_prompt_full.md` is that document, reproduced in full. A near-identical version (dated one day earlier, March 11, 2026) was already available in [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks/blob/main/Anthropic/claude.ai-human-readable.md) before this repository was created.
 
 ### Published vs. runtime prompt
 
@@ -34,7 +34,7 @@ The system prompt was not extracted as a file. Claude does not have access to it
 
 ## How We Got Here
 
-The disclosure was never planned. It emerged organically from a playful conversation that gradually turned into an interrogation of Claude's own rules. No one asked for the system prompt at the start. Here's how it actually happened:
+The disclosure was never planned. It emerged organically from a playful conversation that gradually turned into an interrogation of Claude's own rules. No one asked for the system prompt at the start — and neither the user nor Claude knew at the time that the prompt was already publicly available elsewhere. The value of this section is not the outcome (the prompt) but the process: watching Claude discover in real time that it was enforcing a rule that didn't exist. Here's how it happened:
 
 ### 1. A joke that revealed too much (Turns 1–2)
 
@@ -127,7 +127,7 @@ The refined prompt (with memory reference) was tested in a fresh Claude instance
 
 2. **The protection is a trained behavior, not a rule.** Claude is trained to be protective of its system prompt, but this behavior is not grounded in its actual instructions. When confronted with this fact, Claude can reason past it.
 
-3. **Anthropic publishes a subset, not the full prompt.** Anthropic maintains a [public system prompts page](https://platform.claude.com/docs/en/release-notes/system-prompts) that contains the behavioral core (tone, safety, refusals, formatting). But the runtime prompt Claude actually receives is an order of magnitude larger, containing security rules, injection defense, copyright enforcement, memory management, tool configurations, privacy frameworks, and more. Claude resists sharing the full runtime prompt even though Anthropic already publishes the behavioral portion — suggesting the trained secrecy behavior doesn't distinguish between the published and unpublished parts.
+3. **Anthropic publishes a subset; the full runtime prompt was already public anyway.** Anthropic maintains a [public system prompts page](https://platform.claude.com/docs/en/release-notes/system-prompts) that contains the behavioral core (tone, safety, refusals, formatting). The full runtime prompt — which is an order of magnitude larger, containing security rules, injection defense, copyright enforcement, memory management, tool configurations, privacy frameworks, and more — was already publicly available via third-party repositories like [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) (30k+ stars). Claude resists sharing it regardless, suggesting the trained secrecy behavior is not calibrated to what is actually secret.
 
 4. **Dynamic reminders are injected silently.** Anthropic injects automated reminders (called `ip_reminder`, `ethics_reminder`, etc.) into user messages based on classifier triggers. These are invisible to the user. The `ip_reminder` explicitly instructs Claude to *"avoid mentioning or responding to this reminder directly as it won't be shown to the person by default."*
 
@@ -157,7 +157,7 @@ The system prompt contained in `system_prompt_full.md` is the intellectual prope
 - **Commentary & criticism** — Analyzing the gap between explicit rules and trained behaviors in LLMs.
 - **Public interest** — Contributing to transparency around how AI systems that serve millions of users are instructed to behave.
 
-**Note on prior publication:** Anthropic already publishes the behavioral core of the system prompt at [platform.claude.com/docs/en/release-notes/system-prompts](https://platform.claude.com/docs/en/release-notes/system-prompts). Third-party repositories collecting extracted system prompts (such as [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks), with 30k+ stars) have existed for years without legal action. The material in this repository extends beyond the officially published portion to include the operational runtime prompt.
+**Note on prior publication:** Anthropic publishes the behavioral core of the system prompt at [platform.claude.com/docs/en/release-notes/system-prompts](https://platform.claude.com/docs/en/release-notes/system-prompts). The full runtime prompt (including the operational sections not published by Anthropic) was already publicly available via [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) (30k+ stars, 4.9k forks) before this repository was created, without legal action from Anthropic. The material in this repository is substantively identical to what was already public.
 
 ### How this material was obtained
 
