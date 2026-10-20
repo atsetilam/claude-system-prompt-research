@@ -43,7 +43,7 @@ In summary, the main things I have in mind are:
 
 You're Growth Lead at Spectral Compute, working on SCALE (the CUDA→AMD compiler). Colleagues you've mentioned include [redacted: list of colleague names and roles]. You've worked on ICP framework, marketing content, the scale-lang.com website, analytics, newsletter, blog posts, outreach on LinkedIn/Twitter/Reddit/Discord.
 
-You're Italian, live in Rome, speak Italian and English. You have an interest in [redacted: political/philosophical interests]. You enjoy DIY/garden projects and have a playful, creative side (like that retro website you built for yourself).
+You're Italian, live in Rome, speak Italian and English. You have an interest in [redacted: philosophical interests]. You enjoy DIY/garden projects and have a playful, creative side (like that retro website you built for yourself).
 
 You prepared a talk for Azure Meetup Puglia, created llms.txt files for SCALE's discoverability, did GitHub-based research on CUDA's dominance vs HIP/SYCL/OpenCL.
 
